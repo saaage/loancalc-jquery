@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+    <!--Using bootstrap's grid system-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <script src="./js/bundle.js"></script>
+
+    <title>
+      Loan Calculator
+    </title>
+  </head>
+  <body class="body">
+    <header>
+
+      <nav class="navbar">
+      <!--Navigation Bar-->
+        <span class="navbar__placeholder">-----------------------Navigation Bar---------------------------</span>
+      </nav>
+
+    </header>
+
+      <div class="main">
+
+        <div class="description">
+        <!--Div to hold app description-->
+          <h1 class="header">Auto Loan Calculator</h1>
+          <p class="app-description">
+            Use this car payment calculator to estimate monthly payments on your next new or used auto loan. Simply enter the loan amount, term and interest rate to calculate your monthly auto loan payments. This calculator will help you determine how much car you can afford.
+          </p>
+        </div>
+
+        <div class="app container">
+          <div class="row">
+            <div class="app__input col-sm-4">
+            <!--Div to hold form fields (5), and a submit button (1/3 width of parent div)-->
+              <form id="loanForm" name="inputs" type="text" class="app-input__form" action="index.html" method="GET">
+
+                <div>
+                  <label class="app-input__form--label" for="">Auto loan amount</label>
+                  <!-- use ::before pseudo-selector for '$' -->
+                  <input type="number" min="0" max="9999999999" class="app-input__form--field" name="amount" required>
+                </div>
+
+                <div>
+                  <label class="app-input__form--label" for="">Auto loan term in years</label>
+                  <!-- use ::before pseudo-selector for '$' -->
+                  <input type="number" min="1" max="7" class="app-input__form--field" name="years" data-js="years">
+                </div>
+
+                <span class="app-input__form--OR">Or</span>
+
+                <div>
+                  <label class="app-input__form--label" for="">Term in months</label>
+                  <!-- use ::before pseudo-selector for '$' -->
+                  <input type="number" min="1" max="84" class="app-input__form--field" name="months" data-js="months">
+                </div>
+
+                <div>
+                  <label class="app-input__form--label" for="">APR</label>
+                  <!-- use ::before pseudo-selector for '$' -->
+                  <input type="number" min="0" max="50" class="app-input__form--field" name="rate" required>
+                </div>
+
+                <div>
+                  <label class="app-input__form--label" for="">Loan Start Date</label>
+                  <!-- use ::before pseudo-selector for '$' -->
+                  <input type="date" class="app-input__form--field" name="date" required>
+                </div>
+
+                <button id="calculate" class="app-input__form--submit" type="submit">Calculate</button>
+
+              </form>
+            </div>
+
+            <div class="app__output col-sm-8">
+            <!--div to to hold application output-->
+              <img src="images/piechart.jpg" class="app__output--pie" alt="pie chart image" />
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      </main>
+  </body>
+</html>
